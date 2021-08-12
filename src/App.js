@@ -8,8 +8,9 @@ function App() {
 
   const [meanings, setMeanings] = useState([]);
   const [word, setWord] = useState('');
-  const [category, setCategory] = useState('en')
+  const [category, setCategory] = useState('en');
 
+  // get data from API
   const getData = async () => {
     try {
       axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`)
@@ -29,7 +30,7 @@ function App() {
         <Header category={category} setCategory={setCategory} word={word} setWord={setWord} />
       </div>
       <div className="row">
-        <Main word={word} meanings={meanings} />
+        <Main category={category} word={word} meanings={meanings} />
       </div>
     </div>
   );
