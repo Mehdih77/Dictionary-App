@@ -1,65 +1,29 @@
 import React from 'react';
 import './Main.css';
 
-export default function Main() {
+export default function Main({meanings,word}) { 
+
     return (
         <div className='main'>
-            <div className='synonyms-word'>
-                <span>greeting</span>
-                <span>welcome</span>
-                <span>address</span>
-                <span>welcome</span>
-                <span>address</span>
-                <span>saluting</span>
-                <span>saluting</span>
-            </div>
-        
+            { word && 
+            <>
             <div className='main-definitions'>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
+            <audio src="" controls></audio>
+            
+            {meanings.map(mean => mean.meanings.map(item =>
+             item.definitions.map(def => (
+                <div className='definitions'>
+                 <div className='definition'> <p>Definition:</p> {def.definition}</div>
+                 <div className='example'> <p>Example:</p> {def.example}</div>
+                 <div className='synonyms-word'> <p>Synonyms:</p> 
+                    {def.synonyms.map(s => <span>{s}</span> )}
+                 </div>
+                </div>
+             ))
+             ))}
+            
             </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            <div className='definitions'>
-                <p className='definition'> <span>Definition:</span> Used as a greeting or to begin a phone conversation.</p>
-                <p className='example'> <span>Example:</span> hello there, Katie!</p>
-            </div>
-            </div>
+            </>}
         
         </div>
     )
