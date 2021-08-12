@@ -1,0 +1,67 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.synonyms-word {
+  position: relative;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.synonyms-word::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #a2a2a2;
+}
+.synonyms-word span {
+  background-color: rgba(32, 32, 32, 0.829);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 5px 0 10px 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+.synonyms-word span:hover {
+  background-color: rgba(54, 54, 54, 0.829);
+}
+.main-definitions{
+    overflow-y: scroll;
+    height: 450px;
+}
+.main-definitions::-webkit-scrollbar{
+    width: 10px;
+    background-color: rgb(83, 83, 83);
+}
+.main-definitions::-webkit-scrollbar-thumb{
+    background-color: rgb(11, 44, 107);
+    border-radius: 50px;
+}
+@media screen and (min-width: 900px) {
+    .main-definitions{
+        height: 610px;
+    }
+}
+.definitions {
+  margin-top: 20px;
+  border-bottom: 1px solid #525252;
+}
+.definition {
+  padding-bottom: 5px;
+}
+.definition span,
+.example span {
+  background-color: rgba(20, 20, 20, 0.829);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.definition span:hover,
+.example span:hover {
+  background-color: rgba(26, 26, 26, 0.829);
+}
